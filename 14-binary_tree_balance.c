@@ -30,7 +30,8 @@ size_t binary_tree_height(const binary_tree_t *tree)
 /* #include "binary_trees.h> */
 
 /**
- * binary_tree_balance - function that measures the balance factor of binary tree
+ * binary_tree_balance - function that measures the balance factor of
+ * binary tree
  *
  * @tree: pointer to the root node
  * @a_idk scripting
@@ -48,7 +49,6 @@ int binary_tree_balance(const binary_tree_t *tree)
 		return (0);
 
 	return (binary_tree_height(tree->left) - binary_tree_height(tree->right));
-	/* lt = binary_tree_height(tree->left), rt = binary_tree_height(tree->right);
-	 * return (lt - rt);
-	 */
+	/* lt = binary_tree_height(tree->left),rt = binary_tree_height(tree->right);*/
+	 /* return (lt - rt); */
 }

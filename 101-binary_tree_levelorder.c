@@ -13,18 +13,18 @@
 
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-        /* declaring and initializing the variables */
-        size_t left_height = 0;
-        size_t right_height = 0;
+	/* declaring and initializing the variables */
+	size_t left_height = 0;
+	size_t right_height = 0;
 
-        if (tree != NULL)
-        {
-                left_height = tree->left ? 1 + binary_tree_height(tree->left) : 0;
-                right_height = tree->right ? 1 + binary_tree_height(tree->right) : 0;
-                return ((left_height > right_height) ? left_height : right_height);
-        }
-        else
-                return (0);
+	if (tree != NULL)
+	{
+		left_height = tree->left ? 1 + binary_tree_height(tree->left) : 0;
+		right_height = tree->right ? 1 + binary_tree_height(tree->right) : 0;
+		return ((left_height > right_height) ? left_height : right_height);
+	}
+	else
+		return (0);
 }
 
 
@@ -50,12 +50,16 @@ void bin_lev(const binary_tree_t *root_ptr, size_t lvl,
 	if (lvl == 1)
 		fxn(root_ptr->n);
 	else if (lvl > 1)
-		bin_lev(root_ptr->left, lvl - 1, fxn), bin_lev(root_ptr->right, lvl - 1, fxn);
+	{
+		bin_lev(root_ptr->left, lvl - 1, fxn);
+		bin_lev(root_ptr->right, lvl - 1, fxn);
+	}
 }
 
 
 /**
- * binary_tree_levelorder - function that traverses a binary tree using level-order traversal
+ * binary_tree_levelorder - function that traverses a binary tree using
+ * level-order traversal
  *
  * @tree: root pointer
  * @func: function pointer

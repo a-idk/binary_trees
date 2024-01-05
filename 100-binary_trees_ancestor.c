@@ -32,7 +32,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		for (; second != NULL; second = second->parent)
 		{
 			if (first == second)
-				return (binary_tree_t *)first;
+				return ((binary_tree_t *)first);
 		}
 		second = node2_temp;
 	}
